@@ -13,6 +13,7 @@ def get_art_data(artworkAPI):
         respArt = requests.get(item,headers=headers)
         respArt.encoding = 'utf-8'
         print(time)
+        #限制请求次数
         time += 1
         likeCount = re.findall(r'"likeCount":(\d+)', respArt.text)
         bookMarkCount = re.findall(r'"bookmarkCount":(\d+)', respArt.text)
